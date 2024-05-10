@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="tab.css">
+
+</head>
+
+<body>
+    <ul class="tabs">
+        <li class="active" data-cont=".one">Tab 1</li>
+        <li data-cont=".two">Tab 2</li>
+        <li data-cont=".three">Tab 3</li>
+    </ul>
+    <div class="content">
+        <div class="one">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/0ddf5830265667.561baf8defcda.jpg"
+                width="300px" height="300px" />
+            <h2>Sherlock Holmes</h2>
+            <p class="sherlock">the Scottish writer Arthur Conan Doyle.
+                The prototype for the modern mastermind
+                detective, Holmes first appeared in Conan Doyle’s A Study in Scarlet, published in Beeton’s
+                Christmas
+                Annual of 1887; the first collection of the Holmes’ tales, published as The Adventures of Sherlock
+                Holmes, appeared in 1892. As the world’s first and only “consulting detective", he pursued criminals
+                throughout Victorian and
+                Edwardian London, the south of England, and continental Europe.
+                Although the fictional detective had been anticipated by Edgar Allan Poe’s C.
+            </p>
+        </div>
+        <div class="two">
+            <img class="pic"  src="https://images.pexels.com/photos/1290141/pexels-photo-1290141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                width="300px" height="300px"  />
+            <h3>We love reading!</h3>
+            <p> open portals to new worlds and display new knowledge inspired from the old to the new.
+                Here are
+                some published essays about books and prompts you can use.
+                Books are a way for the past to teach the present and preserve the present for the future. Books
+                come in
+                all shapes and sizes. In addition, technology has improved the way books can be accessed with
+                eBooks.
+            </p>
+        </div>
+        <div class="three">Tokyo is the Capital of Japan</div>
+        </div>
+    <button onclick="myFunction()">dark mode</button>
+
+    <script>
+
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+        let tabs = document.querySelectorAll(".tabs li");
+        let tabsArray = Array.from(tabs);
+        let divs = document.querySelectorAll(".content > div");
+        let divsArray = Array.from(divs);
+
+        // console.log(tabsArray);
+
+        tabsArray.forEach((ele) => {
+            ele.addEventListener("click", function (e) {
+                // console.log(ele);
+                tabsArray.forEach((ele) => {
+                    ele.classList.remove("active");
+                });
+                e.currentTarget.classList.add("active");
+                divsArray.forEach((div) => {
+                    div.style.display = "none";
+                });
+                // console.log(e.currentTarget.dataset.cont);
+                document.querySelector(e.currentTarget.dataset.cont).style.display = "block";
+            });
+        });
+    </script>
+
+</body>
+
+</html>
