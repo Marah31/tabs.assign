@@ -5,7 +5,7 @@ page {
 }
 
 .dark-mode {
-    background-color: black;
+    background-color: rgb(43, 41, 41);
     color: white;
 }
 
@@ -16,12 +16,20 @@ page {
 
 img{
     overflow: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+.one {
+    padding-left: 20px;
 }
 
 .two{
     font-size: large;
     word-spacing: 10px;
     margin: inherit;
+    padding-left: 20px;
 }
 
 body {
@@ -32,6 +40,7 @@ body {
     overflow: hidden;
     display: flex;
     list-style: none;
+    justify-content: center;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -47,15 +56,23 @@ body {
 
 .tabs li.active,
 .tabs li:hover {
-    background-color: #575555;
+    background-color: #8e7979;
 }
 
 .content {
     font-size: large;
-    display: flex;
-    border: solid rgb(92, 90, 90);
+    border: solid rgb(161, 152, 152);
+    border-width: 2px;
 }
 
 .content>div:not(:first-child) {
     display: none;
+}
+
+button{
+    margin-top: 10px;
+    border-radius: 5px;
+    border: solid #730000;
+    border-width: 2px;
+
 }
